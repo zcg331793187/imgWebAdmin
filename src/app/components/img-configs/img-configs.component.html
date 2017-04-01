@@ -1,0 +1,53 @@
+<div class="wrapper wrapper-content animated fadeInUp">
+
+  <div class="ibox">
+    <div class="ibox-title">
+      <h5>爬虫设置管理</h5>
+      <div class="ibox-tools">
+        <a [routerLink]="['/imgConfigAdd']" class="btn btn-primary btn-xs">新建配置</a>
+      </div>
+    </div>
+    <div class="ibox-content">
+      <div class="row m-b-sm m-t-sm">
+        <div class="col-md-1">
+          <button type="button" (click)="refresh()" id="loading-example-btn" class="btn btn-white btn-sm" ><i class="fa fa-refresh"></i> 重置</button>
+        </div>
+        <div class="col-md-11">
+          <div class="input-group">
+            <input (keyup.enter)="search()"
+                                       [(ngModel)]="webName"   type="text" placeholder="搜索" class="input-sm form-control"> <span class="input-group-btn">
+
+ <button type="button" class="btn btn-sm btn-primary" (click)="search()"> 搜索</button> </span></div>
+        </div>
+      </div>
+
+      <div class="project-list">
+
+        <table class="table table-hover">
+          <tbody>
+          <tr *ngFor="let item of data;let i = index;">
+            <td class="project-status">
+              <span [ngClass]="{'label-default': item.isUse==0,'label-primary':item.isUse==1}" class="label label-primary">
+              <span *ngIf="item.isUse==0">已停用</span>
+              <span *ngIf="item.isUse==1">启动中</span>
+              </span>
+            </td>
+            <td class="project-title">
+              <a href="">{{item.webName}}</a>
+            </td>
+            <td class="project-actions">
+
+
+              <a [routerLink]="['/imgConfigDetail/',item.id]"  class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 详细 </a>
+              <a [routerLink]="['/imgConfigEdit/',item.id]"  class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑 </a>
+              <a (click)="close(i,item.id)" class="btn btn-white btn-sm" *ngIf="item.isUse==1"><i class="fa fa-pencil"></i> 停用 </a>
+              <a (click)="open(i,item.id)" class="btn btn-white btn-sm" *ngIf="item.isUse==0"><i class="fa fa-pencil"></i> 启动 </a>
+              <a (click)="deleteConfig(i,item.id)" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 删除 </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
