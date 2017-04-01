@@ -34,7 +34,7 @@ export class HttpService {
         }
 
 
-        return this.http.get(this.api+uri,this.headers).map(res => res.json());
+        return this.http.get(this.api+uri,this.headers);
         // return this.http.get(this.api+uri,this.headers);
     }
 
@@ -49,15 +49,16 @@ export class HttpService {
             data
         );
 
-        return this.http.post(this.api+uri,body).map(res => res.json());
+        return this.http.post(this.api+uri,body);
 
     }
+
 
 
     httpDelete(uri,configs?){
 
 
-        return this.http.delete(this.api+uri,configs).map(res=>res.json);
+        return this.http.delete(this.api+uri,configs);
 
     }
 

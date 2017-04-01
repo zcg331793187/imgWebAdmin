@@ -18,7 +18,7 @@ export class ImgConfigsComponent implements OnInit {
 
 
 
-    data: string[] = [];
+    data:any= [];
     webName:string = '';
 
     ngOnInit() {
@@ -29,8 +29,11 @@ export class ImgConfigsComponent implements OnInit {
     constructor(private ImgConfigService: ImgConfigService, private router: Router) {
 
 
+
         this.ImgConfigService.getValidAllConfig().subscribe(res => {
-            this.data = res;
+
+          // res.json();
+            this.data = res.json();
 
         });
 
@@ -43,7 +46,7 @@ export class ImgConfigsComponent implements OnInit {
 
 
         this.ImgConfigService.settingIsUse(id,1).subscribe(res => {
-
+            res = res.json();
             if(res[0]==1){
                 this.data[index]['isUse'] = 1;
             }else{
@@ -62,7 +65,7 @@ export class ImgConfigsComponent implements OnInit {
 
         this.ImgConfigService.settingIsUse(id,0).subscribe(res => {
 
-
+        res = res.json();
 
             if(res[0]==1){
                 this.data[index]['isUse'] = 0;
@@ -79,6 +82,7 @@ export class ImgConfigsComponent implements OnInit {
     refresh(){
 
         this.ImgConfigService.getValidAllConfig().subscribe(res => {
+          res =res.json();
             this.data = res;
 
         });
@@ -88,6 +92,7 @@ export class ImgConfigsComponent implements OnInit {
 
     deleteConfig(index,id){
         this.ImgConfigService.deleteConfig(id).subscribe(res=>{
+          res = res.json();
             if(res){
                 this.data.splice(index,1);
             }
@@ -105,6 +110,7 @@ export class ImgConfigsComponent implements OnInit {
 
 
         this.ImgConfigService.searchWebName(this.webName).subscribe(res=>{
+          res = res.json();
             console.log(res);
             this.data = res;
         })

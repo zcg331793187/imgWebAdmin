@@ -14,14 +14,14 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 // App views
 
-import {MainModule} from './modules/main/main.module'
-import {ImgConfigDetailModule} from './modules/img-config-detail/img-config-detail.module'
-import {ImgConfigEditModule} from './modules/img-config-edit/img-config-edit.module'
-import {ImgTitleModule} from './modules/img-title/img-title.module'
-import {ImgConfigsModule} from './modules/img-configs/img-configs.module'
-import {ImgUrlModule} from './modules/img-url/img-url.module'
-import {MinorModule} from './modules/minor/minor.module'
-import {ImgConfigAddModule} from './modules/img-config-add/img-config-add.module'
+import {MainModule} from './modules/main.module'
+import {ImgConfigDetailModule} from './modules/img-config-detail.module'
+import {ImgConfigEditModule} from './modules/img-config-edit.module'
+import {ImgTitleModule} from './modules/img-title.module'
+import {ImgConfigsModule} from './modules/img-configs.module'
+import {ImgUrlModule} from './modules/img-url.module'
+import {MinorModule} from './modules/minor.module'
+import {ImgConfigAddModule} from './modules/img-config-add.module'
 
 
 //App directive
@@ -29,10 +29,12 @@ import {ImgConfigAddModule} from './modules/img-config-add/img-config-add.module
 
 
 // App modules/components
-import {NavigationModule} from "./modules/navigation/navigation.module";
-import {FooterModule} from "./modules/footer/footer.module";
-import {TopNavBarModule} from "./modules/top-nav-bar/top-nav-bar.module";
-import {ImgTitleDetailModule} from './modules/img-title-detail/img-title-detail.module'
+import {NavigationModule} from "./modules/navigation.module";
+import {FooterModule} from "./modules/footer.module";
+import {TopNavBarModule} from "./modules/top-nav-bar.module";
+import {ImgTitleDetailModule} from './modules/img-title-detail.module';
+
+// import { LoginComponent } from './components/login/login.component'
 
 
 
@@ -68,7 +70,6 @@ import {ImgTitleDetailModule} from './modules/img-title-detail/img-title-detail.
         ImgConfigEditModule,
         ImgConfigAddModule,
         ImgTitleDetailModule,
-
 
 
 

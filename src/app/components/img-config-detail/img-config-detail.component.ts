@@ -28,8 +28,9 @@ export class ImgConfigDetailComponent implements OnInit {
       this.id = params['id'];
 
     });
-    this.ImgConfigService.configDetail(this.id).subscribe(res=>{
+    this.ImgConfigService.configDetail(this.id).subscribe((res:any)=>{
 
+      res = res.json();
 
       res.config = JSON.parse(res.config);
 

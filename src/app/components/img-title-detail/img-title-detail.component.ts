@@ -30,6 +30,7 @@ export class ImgTitleDetailComponent implements OnInit {
 
     this.ImgConfigService.getTitleDetail(this.id).subscribe(res=>{
 
+      res = res.json();
       console.log(res);
       this.imgs = res;
     });

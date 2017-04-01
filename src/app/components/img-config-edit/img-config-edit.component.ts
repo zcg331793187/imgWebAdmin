@@ -37,7 +37,7 @@ export class ImgConfigEditComponent implements OnInit {
 
         Promise.all([
             this.getBaseKeyWord(), this.configDetail()
-        ]).then(res => {
+        ]).then((res:any) => {
             this.baseKeyWord = res[0];
             this.data = res[1];
             console.log(res[1]);
@@ -85,7 +85,7 @@ export class ImgConfigEditComponent implements OnInit {
 
 
                 if (res) {
-                    resolve(res);
+                    resolve(res.json());
                 } else {
                     reject([]);
                 }
@@ -99,7 +99,8 @@ export class ImgConfigEditComponent implements OnInit {
     configDetail() {
 
         return new Promise((resolve, reject) => {
-            this.ImgConfigService.configDetail(this.id).subscribe(res => {
+            this.ImgConfigService.configDetail(this.id).subscribe((res:any) => {
+              res = res.json();
                 if (res) {
                     res.config = JSON.parse(res.config);
                     resolve(res);
@@ -141,6 +142,7 @@ export class ImgConfigEditComponent implements OnInit {
 
 
         this.ImgConfigService.updateConfig({id:this.id,webName:this.webName,config:config}).subscribe(res=>{
+          res = res.json();
             console.log(res);
         });
 

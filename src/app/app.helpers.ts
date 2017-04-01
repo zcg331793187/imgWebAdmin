@@ -13,7 +13,10 @@ import  * as jQuery from 'jquery';
 
 
 
+
+
 export function correctHeight() {
+
 
 
     let pageWrapper = jQuery('#page-wrapper');

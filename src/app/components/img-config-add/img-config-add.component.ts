@@ -26,8 +26,11 @@ export class ImgConfigAddComponent implements OnInit {
   ngOnInit() {
 
 
-      this.ImgConfigService.getBaseKeyWord().subscribe(baseKeyWord =>
-          this.baseKeyWord = baseKeyWord);
+      this.ImgConfigService.getBaseKeyWord().subscribe(baseKeyWord =>{
+        baseKeyWord = baseKeyWord.json();
+        this.baseKeyWord = baseKeyWord
+      }
+  );
 
   }
 
@@ -64,6 +67,7 @@ export class ImgConfigAddComponent implements OnInit {
 
       console.log(config);
       this.ImgConfigService.addConfig({webName:this.webName,config}).subscribe(res=>{
+        res = res.json();
           console.log(res);
       });
 

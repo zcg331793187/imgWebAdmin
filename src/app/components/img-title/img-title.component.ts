@@ -26,8 +26,9 @@ export class ImgTitleComponent implements OnInit {
         });
 
 
-        this.ImgConfigService.getValidAllTitle(this.limit).subscribe(res=>{
+        this.ImgConfigService.getValidAllTitle(this.limit).subscribe((res:any)=>{
                 console.log(res);
+                res = res.json();
                 this.data = res.rows;
                 this.count = res.count;
         });

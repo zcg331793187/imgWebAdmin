@@ -12,12 +12,17 @@ export class NavigationComponent implements OnInit {
 
 
 
+
+
   ngOnInit() {
   }
 
   constructor(private router: Router) {}
 
   ngAfterViewInit() {
+
+
+
     jQuery('#side-menu').metisMenu();
   }
 
