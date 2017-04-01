@@ -1,8 +1,7 @@
 {
-  "name": "inspinia_angular2_starter",
+  "name": "imgWebAdmin",
   "version": "1.0.0",
-  "description": "Inspinia Admin Theme",
-  "repository": "https://wrapbootstrap.com/theme/inspinia-responsive-admin-theme-WB0R5L90S",
+  "description": "imgWebAdmin",
   "scripts": {
     "typings-install": "typings install",
     "postinstall": "npm run typings-install",
