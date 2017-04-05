@@ -25,7 +25,8 @@
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/metismenu/dist/metisMenu.js"
+        "../node_modules/metismenu/dist/metisMenu.js",
+        "../src/assets/scripts/toastr.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

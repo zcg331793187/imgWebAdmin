@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 
 import  {HttpService} from '../../services/http.service'
 import {ImgConfigService} from '../../services/img-config.service'
+declare var toastr:any;
 
 
 @Component({
@@ -33,7 +34,7 @@ export class ImgConfigsComponent implements OnInit {
         this.ImgConfigService.getValidAllConfig().subscribe(res => {
 
           // res.json();
-            this.data = res.json();
+            this.data = res;
 
         });
 
@@ -46,11 +47,14 @@ export class ImgConfigsComponent implements OnInit {
 
 
         this.ImgConfigService.settingIsUse(id,1).subscribe(res => {
-            res = res.json();
+            // res = res.json();
             if(res[0]==1){
+              toastr.success('开启配置项成功！');
                 this.data[index]['isUse'] = 1;
             }else{
-                console.log('setting error');
+              toastr.success('开启配置项失败！');
+
+              console.log('setting error');
             }
 
 
@@ -65,12 +69,14 @@ export class ImgConfigsComponent implements OnInit {
 
         this.ImgConfigService.settingIsUse(id,0).subscribe(res => {
 
-        res = res.json();
+        // res = res.json();
 
             if(res[0]==1){
-                this.data[index]['isUse'] = 0;
+              toastr.success('关闭配置项成功！');
+
+              this.data[index]['isUse'] = 0;
             }else{
-                console.log('setting error');
+              toastr.error('关闭配置项失败');
             }
 
 
@@ -82,7 +88,7 @@ export class ImgConfigsComponent implements OnInit {
     refresh(){
 
         this.ImgConfigService.getValidAllConfig().subscribe(res => {
-          res =res.json();
+          // res =res.json();
             this.data = res;
 
         });
@@ -92,9 +98,14 @@ export class ImgConfigsComponent implements OnInit {
 
     deleteConfig(index,id){
         this.ImgConfigService.deleteConfig(id).subscribe(res=>{
-          res = res.json();
+          // res = res.json();
             if(res){
-                this.data.splice(index,1);
+              toastr.success('删除配置项成功！');
+
+              this.data.splice(index,1);
+            }else{
+              toastr.error('删除配置项失败！');
+
             }
 
         });
@@ -110,8 +121,8 @@ export class ImgConfigsComponent implements OnInit {
 
 
         this.ImgConfigService.searchWebName(this.webName).subscribe(res=>{
-          res = res.json();
-            console.log(res);
+          // res = res.json();
+          //   console.log(res);
             this.data = res;
         })
     }

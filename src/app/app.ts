@@ -1,13 +1,8 @@
 import {Component} from '@angular/core';
 import { correctHeight, detectBody } from './app.helpers';
+declare var toastr:any;
 
-// Core vendor styles
-// import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-// import '../../node_modules/font-awesome/css/font-awesome.css'
-// import '../../node_modules/animate.css/animate.min.css'
 
-// Main Inspinia CSS files
-// import '../../src/assets/styles/style.css'
 
 
 import  * as jQuery from 'jquery';
@@ -25,6 +20,15 @@ export class AppComponent {
 
 
     ngAfterViewInit() {
+
+
+
+      toastr.options = {
+        closeButton: true,
+        progressBar: true,
+        showMethod: 'slideDown',
+        timeOut: 2000
+      };
 
 
 

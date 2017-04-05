@@ -4,6 +4,7 @@ import  {HttpService} from '../../services/http.service'
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Location}     from '@angular/common';
 
+declare var toastr:any;
 
 @Component({
     selector: 'views-img-config-edit',
@@ -85,7 +86,7 @@ export class ImgConfigEditComponent implements OnInit {
 
 
                 if (res) {
-                    resolve(res.json());
+                    resolve(res);
                 } else {
                     reject([]);
                 }
@@ -100,7 +101,7 @@ export class ImgConfigEditComponent implements OnInit {
 
         return new Promise((resolve, reject) => {
             this.ImgConfigService.configDetail(this.id).subscribe((res:any) => {
-              res = res.json();
+              // res = res.json();
                 if (res) {
                     res.config = JSON.parse(res.config);
                     resolve(res);
@@ -142,8 +143,11 @@ export class ImgConfigEditComponent implements OnInit {
 
 
         this.ImgConfigService.updateConfig({id:this.id,webName:this.webName,config:config}).subscribe(res=>{
-          res = res.json();
+          // res = res.json();
             console.log(res);
+            if(res[0]){
+              toastr.success('修改配置成功！');
+            }
         });
 
 

@@ -4,6 +4,7 @@ import {ImgConfigService} from '../../services/img-config.service'
 
 
 import  {HttpService } from '../../services/http.service'
+declare var toastr:any;
 
 @Component({
   selector: 'views-img-config-add',
@@ -27,7 +28,7 @@ export class ImgConfigAddComponent implements OnInit {
 
 
       this.ImgConfigService.getBaseKeyWord().subscribe(baseKeyWord =>{
-        baseKeyWord = baseKeyWord.json();
+
         this.baseKeyWord = baseKeyWord
       }
   );
@@ -67,8 +68,13 @@ export class ImgConfigAddComponent implements OnInit {
 
       console.log(config);
       this.ImgConfigService.addConfig({webName:this.webName,config}).subscribe(res=>{
-        res = res.json();
+        // res = res.json();
           console.log(res);
+        if(res[0]){
+          toastr.success('新增配置成功！');
+
+        }
+
       });
 
 

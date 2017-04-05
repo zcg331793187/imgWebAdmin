@@ -4,7 +4,7 @@
     <div class="ibox-title">
       <h5>爬虫设置管理</h5>
       <div class="ibox-tools">
-        <a [routerLink]="['/imgConfigAdd']" class="btn btn-primary btn-xs">新建配置</a>
+        <a [routerLink]="['/main/imgConfigAdd']" class="btn btn-primary btn-xs">新建配置</a>
       </div>
     </div>
     <div class="ibox-content">
@@ -38,8 +38,8 @@
             <td class="project-actions">
 
 
-              <a [routerLink]="['/imgConfigDetail/',item.id]"  class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 详细 </a>
-              <a [routerLink]="['/imgConfigEdit/',item.id]"  class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑 </a>
+              <a [routerLink]="['/main/imgConfigDetail/',item.id]"  class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 详细 </a>
+              <a [routerLink]="['/main/imgConfigEdit/',item.id]"  class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 编辑 </a>
               <a (click)="close(i,item.id)" class="btn btn-white btn-sm" *ngIf="item.isUse==1"><i class="fa fa-pencil"></i> 停用 </a>
               <a (click)="open(i,item.id)" class="btn btn-white btn-sm" *ngIf="item.isUse==0"><i class="fa fa-pencil"></i> 启动 </a>
               <a (click)="deleteConfig(i,item.id)" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 删除 </a>
