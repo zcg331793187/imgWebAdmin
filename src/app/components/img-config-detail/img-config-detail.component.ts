@@ -12,7 +12,8 @@ import { Location }     from '@angular/common';
 })
 export class ImgConfigDetailComponent implements OnInit {
 
-  data;
+  webName;
+  config;
   id:number;
   constructor(
       private ImgConfigService:ImgConfigService,
@@ -31,22 +32,19 @@ export class ImgConfigDetailComponent implements OnInit {
     this.ImgConfigService.configDetail(this.id).subscribe((res:any)=>{
 
       // res = res.json();
+      this.webName = res.webName;
+      // console.log(this.data );
+      // res.config = ;
+      this.config = this.handleConfig(JSON.parse(res.config));
 
-      res.config = JSON.parse(res.config);
 
-
-
-      res.config = this.handleConfig(res.config);
-
-      this.data = res;
-      console.log(this.data);
     });
 
   }
 
 
-  handleConfig(data):Object[]{
-    let config:Object[] = [];
+  handleConfig(data):any{
+    let config = [];
 
     for (let i in data){
 

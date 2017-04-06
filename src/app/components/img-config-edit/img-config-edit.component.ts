@@ -4,6 +4,7 @@ import  {HttpService} from '../../services/http.service'
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Location}     from '@angular/common';
 
+
 declare var toastr:any;
 
 @Component({
@@ -27,7 +28,9 @@ export class ImgConfigEditComponent implements OnInit {
 
     constructor(private ImgConfigService: ImgConfigService,
                 private aRoute: ActivatedRoute,
-                private location: Location) {
+                private location: Location,
+                private router: Router
+    ) {
 
         this.aRoute.params.subscribe(params => {
 
@@ -138,15 +141,17 @@ export class ImgConfigEditComponent implements OnInit {
         );
 
 
-        console.log(config);
-        console.log(this.webName);
+
 
 
         this.ImgConfigService.updateConfig({id:this.id,webName:this.webName,config:config}).subscribe(res=>{
           // res = res.json();
-            console.log(res);
-            if(res[0]){
+
+            if(res[0]==1){
               toastr.success('修改配置成功！');
+              this.cancel();
+            }else{
+              toastr.error('修改配置失败！');
             }
         });
 

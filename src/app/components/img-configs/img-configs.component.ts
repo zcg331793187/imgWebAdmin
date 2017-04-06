@@ -117,8 +117,10 @@ export class ImgConfigsComponent implements OnInit {
     search(){
 
 
-        console.log(  this.webName);
-
+      if(!this.webName){
+        toastr.error('关键词不能为空');
+        return;
+      }
 
         this.ImgConfigService.searchWebName(this.webName).subscribe(res=>{
           // res = res.json();

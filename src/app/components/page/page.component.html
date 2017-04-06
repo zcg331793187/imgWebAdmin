@@ -1,0 +1,7 @@
+<div class="text-center">
+  <div class="btn-group">
+    <a class="btn btn-white" [routerLink]="[left]" type="button" ><i class="fa fa-chevron-left"></i></a>
+    <a class="btn btn-white" *ngFor="let item of list" [ngClass]="{'active': item.active==true}" [routerLink]="[item.url]">{{item.limit}}</a>
+    <a class="btn btn-white" [routerLink]="[right]" type="button"><i class="fa fa-chevron-right"></i> </a>
+  </div>
+</div>

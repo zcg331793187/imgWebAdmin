@@ -32,10 +32,9 @@ import {ImgTitleDetailModule} from './modules/img-title-detail.module';
 
 
 import {LoginModule} from './modules/login.module'
-import {LoginComponent} from './components/login/login.component';
-import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
-import {NotFoundPageModule} from './modules/not-found-page.module'
-// import { LoginComponent } from './components/login/login.component'
+import {NotFoundPageModule} from './modules/not-found-page.module';
+import { PageModule } from './modules/page.module'
+
 
 
 
@@ -65,6 +64,10 @@ import {NotFoundPageModule} from './modules/not-found-page.module'
     ImgTitleDetailModule,
     LoginModule,
     NotFoundPageModule,
+    PageModule,
+
+
+
 
     // Modules
     NavigationModule,

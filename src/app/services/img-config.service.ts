@@ -82,4 +82,13 @@ export class ImgConfigService {
 
 
     }
+
+
+
+
+  searchTitle(title: string) {
+
+    return this.HttpService.httpGet('/titles/searchTitle/' + title);
+
+  }
 }

@@ -10,14 +10,14 @@
     <div class="ibox-content">
       <div class="row m-b-sm m-t-sm">
         <div class="col-md-1">
-          <button type="button"  id="loading-example-btn" class="btn btn-white btn-sm" ><i class="fa fa-refresh"></i>重置</button>
+          <button type="button" (click)="refresh()"  id="loading-example-btn" class="btn btn-white btn-sm" ><i class="fa fa-refresh"></i>重置</button>
         </div>
         <div class="col-md-11">
           <div class="input-group">
-            <input
+            <input (keyup.enter)="search()"
                    [(ngModel)]="title"   type="text" placeholder="搜索" class="input-sm form-control"> <span class="input-group-btn">
 
- <button type="button" class="btn btn-sm btn-primary" > 搜索</button> </span></div>
+ <button type="button" class="btn btn-sm btn-primary" (click)="search()" > 搜索</button> </span></div>
         </div>
       </div>
 
@@ -52,6 +52,7 @@
           </tbody>
         </table>
       </div>
+      <app-page count="{{count}}" url="/main/imgTitle/" limits="{{limit}}" offset="18"></app-page>
     </div>
   </div>
 </div>
