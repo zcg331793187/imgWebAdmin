@@ -8,8 +8,10 @@ import {FooterModule} from "./footer.module";
 import {TopNavBarModule} from "./top-nav-bar.module";
 import {MainRoutingModule} from './main.routeing.module'
 
-
-
+import {AuthGuardService} from '../services/auth-guard.service'
+import {UserService} from '../services/user.service'
+import {HttpService} from '../services/http.service'
+import {LocalStorageService} from '../services/local-storage.service'
 
 
 
@@ -25,7 +27,8 @@ import {MainRoutingModule} from './main.routeing.module'
   declarations: [
     MainComponent,
   ],
-  exports: [MainComponent]
+  exports: [MainComponent],
+  providers:[AuthGuardService,UserService,HttpService,LocalStorageService]
 })
 export class MainModule {
 }

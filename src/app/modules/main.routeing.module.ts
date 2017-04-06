@@ -13,7 +13,7 @@ import {ImgTitleDetailComponent} from '../components/img-title-detail/img-title-
 import {ImgConfigAddComponent} from '../components/img-config-add/img-config-add.component'
 import {ImgConfigEditComponent} from "../components/img-config-edit/img-config-edit.component";
 import {ImgConfigDetailComponent} from '../components/img-config-detail/img-config-detail.component'
-
+import {AuthGuardService} from '../services/auth-guard.service'
 
 
 
@@ -21,6 +21,7 @@ const routes: Routes = [
   {
     path: 'main',
     component: MainComponent,
+    canActivate: [AuthGuardService],
     children: [
       {
         path: '',

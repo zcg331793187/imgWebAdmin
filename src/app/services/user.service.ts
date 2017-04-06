@@ -31,4 +31,21 @@ export class UserService {
     let userInfo =  this.LocalStorageService.getObject('userInfo');
    return this.login(userInfo);
   }
+
+  public autoLogin():boolean{
+
+    let userInfo = this.LocalStorageService.getObject('userInfo');
+    if(userInfo['token']){
+
+      console.log('路由守护：已登录');
+      return true;
+
+    }else{
+      console.log('路由守护：未登录');
+      console.log('路由守护：去登陆');
+      return false;
+    }
+
+
+  }
 }
