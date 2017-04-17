@@ -3,9 +3,9 @@ import {CommonModule} from '@angular/common';
 import { RouterModule} from '@angular/router';
 
 import {MainComponent} from '../components/main/main.component'
-import {NavigationModule} from "./navigation.module";
-import {FooterModule} from "./footer.module";
-import {TopNavBarModule} from "./top-nav-bar.module";
+import {NavigationModule} from "./common/navigation.module";
+import {FooterModule} from "./common/footer.module";
+import {TopNavBarModule} from "./common/top-nav-bar.module";
 import {MainRoutingModule} from './main.routeing.module'
 
 import {AuthGuardService} from '../services/auth-guard.service'

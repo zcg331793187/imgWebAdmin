@@ -6,13 +6,13 @@ import {NgModule}             from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {MainComponent} from '../components/main/main.component'
-import {ImgUrlComponent} from '../components/img-url/img-url.component'
-import {ImgTitleComponent} from '../components/img-title/img-title.component'
-import {ImgConfigsComponent} from '../components/img-configs/img-configs.component'
-import {ImgTitleDetailComponent} from '../components/img-title-detail/img-title-detail.component'
-import {ImgConfigAddComponent} from '../components/img-config-add/img-config-add.component'
-import {ImgConfigEditComponent} from "../components/img-config-edit/img-config-edit.component";
-import {ImgConfigDetailComponent} from '../components/img-config-detail/img-config-detail.component'
+import {ImgUrlComponent} from '../components/img/img-url/img-url.component'
+import {ImgTitleComponent} from '../components/img/img-title/img-title.component'
+import {ImgConfigsComponent} from '../components/img/img-configs/img-configs.component'
+import {ImgTitleDetailComponent} from '../components/img/img-title-detail/img-title-detail.component'
+import {ImgConfigAddComponent} from '../components/img/img-config-add/img-config-add.component'
+import {ImgConfigEditComponent} from "../components/img/img-config-edit/img-config-edit.component";
+import {ImgConfigDetailComponent} from '../components/img/img-config-detail/img-config-detail.component'
 import {AuthGuardService} from '../services/auth-guard.service'
 
 

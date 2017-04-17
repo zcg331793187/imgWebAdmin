@@ -4,7 +4,7 @@ import {MainComponent} from './components/main/main.component'
 
 
 import {LoginComponent} from './components/login/login.component'
-import {NotFoundPageComponent} from './components/not-found-page/not-found-page.component'
+import {NotFoundPageComponent} from './components/common/not-found-page/not-found-page.component'
 
 
 export const ROUTES: Routes = [

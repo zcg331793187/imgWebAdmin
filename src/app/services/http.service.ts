@@ -8,13 +8,14 @@ import {
 } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { Observable } from "rxjs/Observable";
 
 // import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class HttpService {
 
-    private api = 'http://localhost:3003';
+    private api = 'http://api.chowgiftking.com:4000';
     private headers = new Headers({'Content-Type': 'application/json'});
 
 
@@ -31,12 +32,18 @@ export class HttpService {
     httpGet(uri, data?, configs?) {
 
 
+
+      console.log('准备发起请求');
         if(configs){
             this.headers = configs;
         }
 
 
-        return this.http.get(this.api+uri,this.headers).map((res: Response) => res.json());
+
+
+
+
+        return this.http.get(this.api+uri,this.headers).map((res: Response) =>res.json());
         // return this.http.get(this.api+uri,this.headers);
     }
 

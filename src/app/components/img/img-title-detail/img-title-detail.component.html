@@ -1,0 +1,18 @@
+<div class="wrapper wrapper-content">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-content" >
+          <h2>Lightbox image gallery</h2>
+          <div class="lightBoxGallery" style="overflow-y: auto;height: 800px;">
+            <a *ngFor="let i of imgs" href="{{apiImgProxy+i.id}}" title="Image from Unsplash" data-gallery="">
+              <img src="{{apiImgProxy+i.id}}">
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

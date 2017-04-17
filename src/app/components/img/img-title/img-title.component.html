@@ -1,0 +1,58 @@
+<div class="wrapper wrapper-content animated fadeInUp">
+
+  <div class="ibox">
+    <div class="ibox-title">
+      <h5>图片分类管理</h5>
+      <div class="ibox-tools">
+        总条数:{{count}}
+      </div>
+    </div>
+    <div class="ibox-content">
+      <div class="row m-b-sm m-t-sm">
+        <div class="col-md-1">
+          <button type="button" (click)="refresh()"  id="loading-example-btn" class="btn btn-white btn-sm" ><i class="fa fa-refresh"></i>重置</button>
+        </div>
+        <div class="col-md-11">
+          <div class="input-group">
+            <input (keyup.enter)="search()"
+                   [(ngModel)]="title"   type="text" placeholder="搜索" class="input-sm form-control"> <span class="input-group-btn">
+
+ <button type="button" class="btn btn-sm btn-primary" (click)="search()" > 搜索</button> </span></div>
+        </div>
+      </div>
+
+      <div class="project-list">
+
+        <table class="table table-hover">
+          <tbody>
+
+
+
+          <tr *ngFor="let item of data;let i = index;">
+            <td class="project-status">
+              <span [ngClass]="{'label-default': item.status==0,'label-primary':item.status==1}" class="label label-primary">
+              <span *ngIf="item.status==0">已停用</span>
+              <span *ngIf="item.status==1">启动中</span>
+              </span>
+            </td>
+            <td class="project-title">
+              <a [routerLink]="['/main/imgTitleDetail/',item.id]">{{item.title}}</a>
+            </td>
+            <td class="project-title">
+              <a>{{item.total}}</a>
+            </td>
+            <td class="project-actions">
+              <a [routerLink]="['/main/imgTitleDetail/',item.id]"  class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 详细 </a>
+              <a (click)="close(i,item.id)" class="btn btn-white btn-sm" *ngIf="item.status==1"><i class="fa fa-pencil"></i> 显示 </a>
+              <a (click)="open(i,item.id)" class="btn btn-white btn-sm" *ngIf="item.status==0"><i class="fa fa-pencil"></i> 隐藏 </a>
+              <a (click)="deleteConfig(i,item.id)" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 删除 </a>
+            </td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <app-page count="{{count}}" url="/main/imgTitle/" limits="{{limit}}" offset="18"></app-page>
+    </div>
+  </div>
+</div>

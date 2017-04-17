@@ -12,28 +12,28 @@ import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 // App views
 
 import {MainModule} from './modules/main.module'
-import {ImgConfigDetailModule} from './modules/img-config-detail.module'
-import {ImgConfigEditModule} from './modules/img-config-edit.module'
-import {ImgTitleModule} from './modules/img-title.module'
-import {ImgConfigsModule} from './modules/img-configs.module'
-import {ImgUrlModule} from './modules/img-url.module'
+import {ImgConfigDetailModule} from './modules/img/img-config-detail.module'
+import {ImgConfigEditModule} from './modules/img/img-config-edit.module'
+import {ImgTitleModule} from './modules/img/img-title.module'
+import {ImgConfigsModule} from './modules/img/img-configs.module'
+import {ImgUrlModule} from './modules/img/img-url.module'
 import {MinorModule} from './modules/minor.module'
-import {ImgConfigAddModule} from './modules/img-config-add.module'
+import {ImgConfigAddModule} from './modules/img/img-config-add.module'
 
 
 //App directive
 
 
 // App modules/components
-import {NavigationModule} from "./modules/navigation.module";
-import {FooterModule} from "./modules/footer.module";
-import {TopNavBarModule} from "./modules/top-nav-bar.module";
-import {ImgTitleDetailModule} from './modules/img-title-detail.module';
+import {NavigationModule} from "./modules/common/navigation.module";
+import {FooterModule} from "./modules/common/footer.module";
+import {TopNavBarModule} from "./modules/common/top-nav-bar.module";
+import {ImgTitleDetailModule} from './modules/img/img-title-detail.module';
 
 
 import {LoginModule} from './modules/login.module'
-import {NotFoundPageModule} from './modules/not-found-page.module';
-import { PageModule } from './modules/page.module'
+import {NotFoundPageModule} from './modules/common/not-found-page.module';
+import { PageModule } from './modules/common/page.module'
 
 
 
